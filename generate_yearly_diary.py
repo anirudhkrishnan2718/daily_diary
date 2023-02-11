@@ -26,7 +26,7 @@ def create_fresh_diary_structure(year):
     """
     work_subsection_default                     = 'Meeting'
     leisure_subsection_default                  = 'Reading'
-    placeholder_text                            = True
+    placeholder_text                            = False
 
     if os.path.exists(f'./Diary_{year}'):
         shutil.rmtree(f'./Diary_{year}')
