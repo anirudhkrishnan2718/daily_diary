@@ -10,18 +10,18 @@
 
 
 
-%% BASIC DOCUMENT DETAILS %%
+%%---------------------- BASIC DOCUMENT DETAILS ------------------%%
 % These details are easiest hard-coded
 \author{Anirudh Krishnan}
 \title{Daily Journal 2023}
 \date{\today}
 
-%% FINE CONTROL OVER DOCUMENT DIMENSIONS %%
+%%-------------- FINE CONTROL OVER DOCUMENT DIMENSIONS------------ %%
 \setlength{\headsep}{54pt}
 \setlength{\textheight}{620pt}
 \setlength{\parskip}{1em}
 
-%% CHAPTER, SECTION, SUBSECTION FOMRATTING
+%%------------ CHAPTER, SECTION, SUBSECTION FOMRATTING -----------%%
 
 % dont show chapter n or section numbering in front og chapter or section names
 \setcounter{secnumdepth}{-1}
@@ -41,10 +41,14 @@
 \titlespacing{\subsection}{20pc}{1.5ex plus .1ex minus .2ex}{1pc}
 
 
+%%------------------------- MAIN DOCUMENT ------------------------%%
+
 \begin{document}
 
 \frontmatter
-\maketitle
+\begin{titlepage}
+    \input{./custom_title.tex}
+\end{titlepage}
 
 % TOC entries line spacing reduced
 \renewcommand{\baselinestretch}{0.25}\normalsize
@@ -53,6 +57,8 @@
 
 
 \mainmatter
+
+%%---------------- HEADER AND FOOTER FORMATTING ------------------%%
 
 % Set the pagestyle for plain pages which are on chapter start and fancy pages used everywhere else
 % Once again the author and document title are hard-coded here for convenience. Defining and using variables 
@@ -63,7 +69,7 @@
 
 
 
-%% CONTENT SECTION %%
+%%--------------------- CONTENT SECTION --------------------------%%
 
 % Control for now is at the month level
 % For finer control, look at './Diary_{year}/{Month_name}/full_summary.tex' which contains the 

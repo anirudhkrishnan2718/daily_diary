@@ -5,8 +5,12 @@ import calendar
 import os
 import shutil
 
-# Set the year for whici to generate the diary data folder
+# Set the parameters to be used to generate the diary data folder
 year                                        = 2023
+work_subsection_default                     = 'Meeting'
+leisure_subsection_default                  = 'Reading'
+
+
 if os.path.exists(f'./Diary_{year}'):
     shutil.rmtree(f'./Diary_{year}')
 os.mkdir(f'./Diary_{year}')
@@ -56,9 +60,9 @@ for month in range(1, 13):
         day_folder_name                     = f'./Diary_{year}/{calendar.month_name[month]}/{calendar.month_name[month]}_{day:02d}'
 
         with open(day_folder_name+'/work.tex', 'w') as f1:
-            f1.write('\subsection{Meeting}\n')
+            f1.write(f'\subsection{{{work_subsection_default}}}\n')
         with open(day_folder_name+'/leisure.tex', 'w') as f3:
-            f3.write('\subsection{Reading}\n')
+            f3.write(f'\subsection{{{leisure_subsection_default}}}\n')
 
 
 
