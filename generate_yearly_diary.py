@@ -1,11 +1,14 @@
 """Generate a folder structure for a given year
 for use with the latex daily journal repository"""
 
+######################## IMPORT MODULES ############################
+
 import calendar
 import os
 import shutil
 
-# Set the parameters to be used to generate the diary data folder
+######################### SET PARAMETERS ###########################
+
 year_input                                  = 2023
 titlepage_dict                              = {
     'author'                                : 'Anirudh Krishnan',
@@ -21,33 +24,37 @@ sectioning_format_dict                      = {
         'size'                              : r'\Huge',
         'color'                             : 'Gray',
         'background_color'                  : r'Black!20',
-        'family'                            : r'\sffamily'
+        'family'                            : r'\sffamily',
+        'colorured_text'                    : True
     },
     'section'                               : {
         'face'                              : r'\bfseries',
         'size'                              : r'',
         'color'                             : 'Brown',
         'background_color'                  : r'Red!20',
-        'family'                            : r'\sffamily'
+        'family'                            : r'\sffamily',
+        'colorured_text'                    : True
     },
     'subsection'                            : {
         'face'                              : r'\bfseries',
         'size'                              : r'',
         'color'                             : 'OliveGreen',
         'background_color'                  : r'Green!20',
-        'family'                            : r'\sffamily'
+        'family'                            : r'\sffamily',
+        'colorured_text'                    : True
     },
     'subsubsection'                         : {
         'face'                              : r'\bfseries',
         'size'                              : r'',
         'color'                             : 'MidnightBlue',
         'background_color'                  : r'Blue!20',
-        'family'                            : r''
+        'family'                            : r'',
+        'colorured_text'                    : True
     }
 }
 
-# Set the parameters for the custom titlepage
 
+####################### CUSTOM FUNCTIONS ###########################
 
 def create_fresh_diary_structure(year):
     """Create a blank folder structure for a yearly journal
@@ -137,5 +144,12 @@ def create_custom_titlepage(dict_input):
         f6.write(r'\end{titlepage}' + '\n')
 
 
+
+########################## CODE EXECUTION ##########################
+
+# Uncomment to delete existing diary folder and create a new one
+# WARNING : deletes existing data failes for each day's journal entry
 # create_fresh_diary_structure(year_input)
-# create_custom_titlepage(titlepage_dict)
+
+# Uncomment to create the fancy titlepage
+create_custom_titlepage(titlepage_dict)
