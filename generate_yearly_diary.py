@@ -15,6 +15,37 @@ titlepage_dict                              = {
     'place'                                 : 'Mars'
 }
 
+sectioning_format_dict                      = {
+    'chapter'                               : {
+        'face'                              : r'\normalfont',
+        'size'                              : r'\Huge',
+        'color'                             : 'Gray',
+        'background_color'                  : r'Black!20',
+        'family'                            : r'\sffamily'
+    },
+    'section'                               : {
+        'face'                              : r'\bfseries',
+        'size'                              : r'',
+        'color'                             : 'Brown',
+        'background_color'                  : r'Red!20',
+        'family'                            : r'\sffamily'
+    },
+    'subsection'                            : {
+        'face'                              : r'\bfseries',
+        'size'                              : r'',
+        'color'                             : 'OliveGreen',
+        'background_color'                  : r'Green!20',
+        'family'                            : r'\sffamily'
+    },
+    'subsubsection'                         : {
+        'face'                              : r'\bfseries',
+        'size'                              : r'',
+        'color'                             : 'MidnightBlue',
+        'background_color'                  : r'Blue!20',
+        'family'                            : r''
+    }
+}
+
 # Set the parameters for the custom titlepage
 
 
@@ -84,10 +115,7 @@ def create_fresh_diary_structure(year):
                 f3.write(f'\subsection{{{leisure_subsection_default}}}\n')
                 if placeholder_text:
                     f3.write('\lipsum[3-4]\n')
-                    
-                    
-                    
-                    
+
 def create_custom_titlepage(dict_input):
     with open('./custom_titlepage_auto.tex', 'w') as f6:
         f6.write(r'\begin{titlepage}' + '\n')
@@ -109,7 +137,5 @@ def create_custom_titlepage(dict_input):
         f6.write(r'\end{titlepage}' + '\n')
 
 
-
-
-create_fresh_diary_structure(year_input)
-create_custom_titlepage(titlepage_dict)
+# create_fresh_diary_structure(year_input)
+# create_custom_titlepage(titlepage_dict)

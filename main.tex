@@ -6,7 +6,7 @@
 \usepackage[]{fancyhdr}
 \usepackage[]{titlesec}
 \usepackage[dvipsnames]{xcolor}
-\usepackage[]{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{needspace}
 
 
@@ -30,15 +30,23 @@
 \setcounter{tocdepth}{0}
 
 % Chapter formatting
-\titleformat{\chapter}[block]{\normalfont\Huge\sffamily\color{MidnightBlue}}{\thechapter}{}{}
+\titleformat{\chapter}[block]{\Huge\sffamily}{\thechapter}{0em}{\textcolor{Black!80}}
 
 % Section in left margin with given formatting and spacing
-\titleformat{\section}[leftmargin]{\vspace{2em}\sffamily\bfseries\filleft}{\thesection}{0em}{\textcolor{Brown}}
+\titleformat{\section}[leftmargin]{\vspace{2em}\sffamily\bfseries\filleft}{\thesection}{0.5em}{\textcolor{BrickRed}}
 \titlespacing{\section}{20pc}{1.5ex plus .1ex minus .2ex}{1pc}
 
 % Subsection in right margin with given formatting and spacing
-\titleformat{\subsection}[rightmargin]{\vspace{2em}\sffamily\bfseries\filright}{\thesubsection}{0em}{\textcolor{OliveGreen}}
+\titleformat{\subsection}[rightmargin]{\vspace{2em}\sffamily\bfseries\filright}{\thesubsection}{0.5em}{\textcolor{OliveGreen}}
 \titlespacing{\subsection}{20pc}{1.5ex plus .1ex minus .2ex}{1pc}
+
+
+% Subsubsection is part of the paragraph itself
+\titleformat{\subsubsection}[runin]{\bfseries}{}{0em}{\textcolor{MidnightBlue}}[:]
+\titlespacing{\subsubsection}{\parindent}{-2.2em}{1em}
+% The necessity of this -2.2em value is a mystery
+
+
 
 
 %%------------------------- MAIN DOCUMENT ------------------------%%
